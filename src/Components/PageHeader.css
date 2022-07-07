@@ -1,0 +1,12 @@
+.Page-header {
+    background-color: #2b2927;
+    margin-bottom: 75px;
+    overflow: hidden;
+    color: white;
+}
+
+.Header-title-area {
+    display: block;
+    width: 30%;
+    float: left;
+}
