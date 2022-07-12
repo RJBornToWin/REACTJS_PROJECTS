@@ -4,6 +4,9 @@ import ProductsTable from "./ProductsTable";
 
 function FilterableProductData(props)
 {
+    console.log("props.products");
+    console.log(props.products);
+
     return (
         <div className={props.className}>
             <SearchBar />

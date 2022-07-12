@@ -1,13 +1,38 @@
-import React, { Component } from "react";
-import ProductCategory from "./ProductCategory";
-import ProductHeader from "./ProductHeader";
+import React, { Component, Fragment } from "react";
 
-class ProductsTable extends Component{
+class ProductsTable extends Component{   
     render() {
+        let category = '';
         return (
             <div>
-                <ProductHeader />
-                <ProductCategory /> 
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                        {this.props.products.map(
+                            (product) => {
+                                        console.log('category' + category);
+                                        if (category !== product.category)
+                                        {
+                                            category = product.category;
+                                            return (
+                                            <Fragment>
+                                            <tr><td>{product.category}</td></tr>
+                                            <tr><td>{product.name}</td><td>{product.price}</td></tr>
+                                            </Fragment>
+                                            );
+                                        }
+                                        else
+                                        {
+                                            return (
+                                            <tr><td>{product.name}</td><td>{product.price}</td></tr>
+                                            )
+                                        }
+                                        }
+                            )}
+                </table>
+                
             </div>
         );
     }
